@@ -1,0 +1,332 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --pink: #e75480;
+    --dark-pink: #b83265;
+    --light-pink: #fff0f5;
+    --gold: #d6a64f;
+}
+
+body {
+    min-height: 100vh;
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(135deg, #ffe4ec, #fff7fa, #ffd6e7);
+    color: #783c53;
+    overflow-x: hidden;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+}
+
+/* Start screen */
+.loader {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background:
+        radial-gradient(circle at top, #fff7fa, transparent 60%),
+        linear-gradient(135deg, #ffd6e7, #f9b8d0);
+    transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+.loader.hide {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.start-card {
+    width: min(100%, 430px);
+    padding: 40px 25px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid white;
+    border-radius: 28px;
+    box-shadow: 0 20px 60px rgba(183, 63, 109, 0.2);
+    animation: appear 1s ease;
+}
+
+.start-heart {
+    font-size: 65px;
+    animation: heartbeat 1.4s infinite;
+}
+
+.start-card h1 {
+    margin: 16px 0 12px;
+    color: var(--dark-pink);
+    font-size: clamp(25px, 5vw, 34px);
+}
+
+.start-card p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    color: #89546b;
+}
+
+#play {
+    width: 100%;
+    padding: 16px 18px;
+    border: 1px solid #edc36f;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffe9a8, #d6a64f, #f9e4a0);
+    color: #77431b;
+    font-size: 17px;
+    font-weight: 800;
+    box-shadow: 0 7px 18px rgba(165, 112, 26, 0.2);
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+#play:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px rgba(165, 112, 26, 0.3);
+}
+
+/* Main page */
+.main {
+    display: none;
+    position: relative;
+    min-height: 100vh;
+    padding: 45px 16px;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.main.show {
+    display: flex;
+    animation: appear 1s ease;
+}
+
+.birthday-card {
+    position: relative;
+    z-index: 2;
+    width: min(100%, 680px);
+    padding: clamp(25px, 6vw, 55px);
+    text-align: center;
+    background: rgba(255, 255, 255, 0.82);
+    border: 1px solid white;
+    border-radius: 32px;
+    box-shadow: 0 25px 70px rgba(186, 67, 112, 0.18);
+    backdrop-filter: blur(8px);
+}
+
+.top-label {
+    color: #bb6a86;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 4px;
+}
+
+.birthday-icon {
+    margin: 20px 0 8px;
+    font-size: clamp(65px, 12vw, 95px);
+    animation: float 3s ease-in-out infinite;
+}
+
+.birthday-title {
+    color: #c94f7b;
+    font-size: clamp(30px, 7vw, 54px);
+    line-height: 1.2;
+}
+
+.birthday-name {
+    margin-top: 10px;
+    color: #e75480;
+    font-family: Georgia, serif;
+    font-size: clamp(42px, 10vw, 76px);
+    font-style: italic;
+    text-shadow: 0 4px 15px rgba(231, 84, 128, 0.15);
+    overflow-wrap: anywhere;
+}
+
+.divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 24px auto;
+    max-width: 330px;
+    color: #e75480;
+    font-size: 25px;
+}
+
+.divider::before,
+.divider::after {
+    content: "";
+    height: 1px;
+    flex: 1;
+    background: #f0b4ca;
+}
+
+.message-box {
+    min-height: 45px;
+    margin-bottom: 18px;
+    color: #b83265;
+    font-size: clamp(19px, 4vw, 25px);
+    font-weight: 700;
+}
+
+.wish {
+    max-width: 480px;
+    margin: 0 auto;
+    color: #805469;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.cake {
+    margin-top: 25px;
+}
+
+.cake-emoji {
+    display: inline-block;
+    font-size: 78px;
+    animation: float 2.5s ease-in-out infinite;
+}
+
+.cake-caption {
+    margin-top: 6px;
+    color: #c94f7b;
+    font-family: Georgia, serif;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.wish-button {
+    margin-top: 28px;
+    padding: 14px 24px;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ec7ba1, #cf4778);
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+    box-shadow: 0 8px 20px rgba(207, 71, 120, 0.25);
+    transition: transform 0.2s;
+}
+
+.wish-button:hover {
+    transform: scale(1.04);
+}
+
+.footer {
+    margin-top: 30px;
+    color: #bc8298;
+    font-size: 13px;
+}
+
+/* Floating decorations */
+.floating-hearts span {
+    position: fixed;
+    z-index: 1;
+    bottom: -60px;
+    font-size: 26px;
+    pointer-events: none;
+    animation: rise 10s linear infinite;
+}
+
+.floating-hearts span:nth-child(1) {
+    left: 8%;
+    animation-delay: 0s;
+}
+
+.floating-hearts span:nth-child(2) {
+    left: 28%;
+    animation-delay: 3s;
+}
+
+.floating-hearts span:nth-child(3) {
+    left: 52%;
+    animation-delay: 1s;
+}
+
+.floating-hearts span:nth-child(4) {
+    left: 75%;
+    animation-delay: 4s;
+}
+
+.floating-hearts span:nth-child(5) {
+    left: 90%;
+    animation-delay: 2s;
+}
+
+/* Confetti canvas */
+#confetti {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    pointer-events: none;
+}
+
+/* Animations */
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.15); }
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+}
+
+@keyframes rise {
+    0% {
+        transform: translateY(0) rotate(0);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    100% {
+        transform: translateY(-115vh) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(15px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 480px) {
+    .main {
+        padding: 20px 12px;
+    }
+
+    .birthday-card {
+        padding: 30px 20px;
+        border-radius: 24px;
+    }
+
+    .top-label {
+        letter-spacing: 2px;
+    }
+
+    .wish {
+        font-size: 15px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+    }
+}

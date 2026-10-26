@@ -1,0 +1,92 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday Miha 💗</title>
+    <meta name="theme-color" content="#ffe4ed">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Start screen -->
+    <div class="loader" id="loader">
+        <div class="start-card">
+            <div class="start-heart">💗</div>
+            <h1>A Special Surprise</h1>
+            <p>Someone special has a birthday today...</p>
+            <button id="play">Open Your Surprise 🎁</button>
+        </div>
+    </div>
+
+    <!-- Background music: add your own music.mp3 in assets -->
+    <audio id="song" loop preload="auto">
+        <source src="assets/music.mp3" type="audio/mpeg">
+    </audio>
+
+    <!-- Confetti -->
+    <canvas id="confetti"></canvas>
+
+    <!-- Main birthday page -->
+    <main class="main" id="main">
+
+        <div class="floating-hearts" aria-hidden="true">
+            <span>💗</span>
+            <span>💕</span>
+            <span>🌸</span>
+            <span>💖</span>
+            <span>✨</span>
+        </div>
+
+        <section class="birthday-card">
+
+            <div class="top-label">A LITTLE SURPRISE FOR YOU</div>
+
+            <div class="birthday-icon">🎂</div>
+
+            <h1 class="birthday-title">
+                Happy Birthday
+            </h1>
+
+            <h2 class="birthday-name">Miha 💗</h2>
+
+            <div class="divider">
+                <span>♡</span>
+            </div>
+
+            <div class="message-box">
+                <p id="message">
+                    Today is all about you, Miha!
+                </p>
+            </div>
+
+            <p class="wish">
+                May your life always be filled with
+                love, laughter, beautiful memories
+                and countless reasons to smile.
+            </p>
+
+            <div class="cake">
+                <div class="cake-emoji">🎂</div>
+                <div class="cake-caption">
+                    Make a wish, Miha! ✨
+                </div>
+            </div>
+
+            <button class="wish-button" id="wishButton">
+                A Little More Magic ✨
+            </button>
+
+            <p class="footer">
+                Made with 💗 just for Miha
+            </p>
+
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
